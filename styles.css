@@ -99,3 +99,52 @@ nav{
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
 }
+
+.status-bar{
+    display: flex;
+    justify-content: center;
+}
+
+.status{
+    max-width: 100%;
+    text-align: center;
+}
+
+#image-raw {
+    width: 50%;
+    height: 100%;
+    border: solid 1px black;
+}
+
+#image-raw > * {
+    width: 100%;
+}
+
+#image-processed {
+    width: 50%;
+    height: 100%;
+    border: solid 1px black;
+}
+
+#image-processed > * {
+    width: 100%;
+}
+
+.image-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    padding: 0.25rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
