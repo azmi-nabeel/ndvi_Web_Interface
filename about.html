@@ -23,6 +23,115 @@
         <div class="line3"></div>
       </div>
     </nav>
+    <div class="content">
+      In today's agricultural landscape, there's a notable gap in real-time
+      monitoring and personalized care for plant health. This shortfall makes it
+      tough for farmers to quickly spot and tackle issues like pests, diseases,
+      or nutrient imbalances, ultimately impacting crop yields and quality. It's
+      crucial we ramp up our tech solutions and tailor-made strategies to fill
+      this void and boost agricultural productivity effectively.
+    </div>
+    <h2 class="content">Project vision and mission</h2>
+    <div class="content">
+      Revolutionizing agricultural monitoring through innovative drone
+      technology equipped with infrared imaging capabilities, providing farmers
+      with real-time insights into crop health and enabling sustainable farming
+      practices.
+    </div>
+
+    <h2 class="content">Use cases for farmers</h2>
+
+    <div class="content">
+      <div class="content">
+        <ul>
+          <li>
+            Capture Infrared Images: Farmer launches drone equipped with
+            Raspberry Pi and infrared camera to capture high-resolution images
+            of crops, revealing plant health and growth patterns
+          </li>
+          <li>
+            Image Processing and NDVI Analysis: Krishi Sevak app processes
+            captured images, conducting NDVI analysis to assess crop health and
+            identify areas of varying vegetation vigor.
+          </li>
+          <li>
+            Weather Data Integration: App integrates real-time weather data
+            (temperature, humidity, precipitation, wind speed) with crop health
+            information, offering a holistic view of environmental conditions
+            impacting crop growth.
+          </li>
+          <li>
+            Personalized Recommendations: Krishi Sevak app generates tailored
+            recommendations for irrigation scheduling, fertilizer application,
+            pest/disease management, and crop rotation strategies, optimizing
+            yield and sustainability.
+          </li>
+          <li>
+            Alerts and Notifications: App sends timely alerts to farmer
+            regarding significant changes in crop health or weather conditions,
+            facilitating proactive management and decision-making for enhanced
+            productivity
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content">Plant Health Analysis using Drone Footage</h2>
+    <div class="content">
+      <div id="full">
+        <img class="image" src="Assets/drone.png" />
+      </div>
+      <div style="height: 300px; margin-top: 40px">
+        We plan to do the analysis by making use of Normalized Difference
+        Vegetation Index(NDVI) obtained from the drone footage by following
+        steps.
+        <li>
+          Capture Images: Capture both infrared and visible light images of the
+          same plantation area. This can be done with specialized cameras such
+          as multispectral or near-infrared (NIR) cameras.
+        </li>
+        <li>Preprocessing: Preprocess the images if required</li>
+        <li>
+          NDVI Calculation: NDVI = (NIR-RED)/(NIR+RED) NIR: This is the
+          intensity of near-infrared light reflected by vegetation. RED: This is
+          the intensity of red light reflected by vegetation. This can be
+          extracted from the drone footage.
+        </li>
+        <li>
+          Normalize NDVI values: NDVI values typically range from -1 to 1, where
+          higher values indicate healthier vegetation. Normalize the NDVI values
+          to a scale that's easier to interpret. For example, you might scale
+          the values to a range of 0 to 1 or 0 to 100 for easier visualization.
+        </li>
+      </div>
+    </div>
+
+    <h2 class="content">Example of NDVI</h2>
+    <div id="boxes">
+      <div id="leftbox">
+        <img class="image" src="Assets/raw-ndvi.png" />
+      </div>
+
+      <div id="middlebox">
+        <img
+          class="image"
+          style="background-color: white"
+          src="Assets/arrow.png"
+        />
+      </div>
+
+      <div id="rightbox">
+        <img class="image" src="Assets/ndvi-sample.jpg" />
+      </div>
+    </div>
+    <!-- <h2></h2> -->
+    <div class="content" style="height: 100%; width: 75%">
+      <img class="image" src="Assets/image.png" />
+    </div>
+     <h2 class="content">Circuit Diagram</h2>
+    <div class="content" style="height: 100%; width: 75%">
+      <img class="image" src="Assets/circuit.png" />
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
