@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { getImageRaw, getImageMapped } = require('./storage.js');
+const { getWeather } = require('./weather.js')
 
 const Port = process.env.PORT || 8080;
 
@@ -23,6 +24,11 @@ app.get('/images', async (req, res) => {
     mappedURL : mappedImage,
     rawURL: rawImage
    })
+})
+
+app.get('/weather', async (req, res) => {
+  const data = await getWeather();
+  res.send(data);
 })
 
 app.listen(Port, () => {
