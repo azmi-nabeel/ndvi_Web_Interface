@@ -8,20 +8,11 @@ initializeApp({
 });
 
 const getImageMapped = () => {
-// initializeApp({
-//   credential: cert(serviceAccount),
-//   storageBucket: 'ndvi-rpi.appspot.com'
-// });
 
 let mappedURL;
 const bucket = getStorage().bucket();
 const fileRefMapped = bucket.file('color_mapped_image.png')
-// const downloadURL = getDownloadURL(fileRefMapped).then((data) => {
-//   mappedURL = data;
-//   return mappedURL
-// }).catch((err) => {
-//   console.log(err)
-// })
+
 return new Promise((resolve, reject) => {
   getDownloadURL(fileRefMapped)
     .then((data) => {
@@ -34,20 +25,11 @@ return new Promise((resolve, reject) => {
 }
 
 const getImageRaw = () => {
-//   initializeApp({
-//   credential: cert(serviceAccount),
-//   storageBucket: 'ndvi-rpi.appspot.com'
-// });
 
 let mappedURL;
 const bucket = getStorage().bucket();
 const fileRefMapped = bucket.file('raw.png')
-// const downloadURL = getDownloadURL(fileRefMapped).then((data) => {
-//   mappedURL = data;
-//   return mappedURL
-// }).catch((err) => {
-//   console.log(err)
-// })
+
 return new Promise((resolve, reject) => {
   getDownloadURL(fileRefMapped)
     .then((data) => {
@@ -58,11 +40,5 @@ return new Promise((resolve, reject) => {
 })
 }
 
-
-// getImageRaw().then((data) => {
-//   console.log(data)
-// }).catch((err) => {
-//   console.log(err)
-// })
 
 module.exports = { getImageMapped, getImageRaw }

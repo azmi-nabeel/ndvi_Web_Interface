@@ -24,26 +24,18 @@ const mappedImage = document.getElementById('mappedImage');
 const button = document.getElementById('Reload');
 
 button.onclick = function() {
-let raw;
-let mapped;
-fetch('/images').then((response) => {
-    response.json().then((data) => {
-        if(data.error){
-            console.log("dsadas");
-            // rawImage.src = ""
-            // mappedImage.src = ""
-        }else{
-            rawImage.src = data.rawURL;
-            mappedImage.src = data.mappedURL;
-            // raw = data.rawURL
-            // mapped = data.mappedURL
-            console.log(data.rawURL)
-            console.log(data.mappedURL)
-        }
-    })
-})
-// console.log(raw);
-// console.log(mapped);
-// rawImage.src = raw;
-// mappedImage.src = mapped;
+    let raw;
+    let mapped;
+    fetch('/images').then((response) => {
+        response.json().then((data) => {
+            if(data.error){
+                console.log("dsadas");
+            }else{
+                rawImage.src = data.rawURL;
+                mappedImage.src = data.mappedURL;
+                console.log(data.rawURL)
+                console.log(data.mappedURL)
+            }
+        })
+    });
 }
