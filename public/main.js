@@ -19,8 +19,8 @@ const navSlide=()=>{
 }
 navSlide();
 
-const rawImage = document.getElementById('image-raw');
-const mappedImage = document.getElementById('image-processed');
+const rawImage = document.getElementById('rawImage');
+const mappedImage = document.getElementById('mappedImage');
 const button = document.getElementById('Reload');
 
 button.onclick = function() {
@@ -29,16 +29,21 @@ let mapped;
 fetch('/images').then((response) => {
     response.json().then((data) => {
         if(data.error){
-            rawImage.src = ""
-            mappedImage.src = ""
+            console.log("dsadas");
+            // rawImage.src = ""
+            // mappedImage.src = ""
         }else{
-            raw = data.rawURL
-            mapped = data.mappedURL
+            rawImage.src = data.rawURL;
+            mappedImage.src = data.mappedURL;
+            // raw = data.rawURL
+            // mapped = data.mappedURL
             console.log(data.rawURL)
             console.log(data.mappedURL)
         }
     })
 })
-rawImage.src = raw;
-mappedImage.src = mapped;
+// console.log(raw);
+// console.log(mapped);
+// rawImage.src = raw;
+// mappedImage.src = mapped;
 }
