@@ -12,7 +12,8 @@ const getWeather = () => {
             temp: data.main.temp,
             temp_min: data.main.temp_min,
             temp_max: data.main.temp_max,
-            humidity: data.main.humidity
+            humidity: data.main.humidity,
+            wind_speed: data.wind.speed
            })
         }
       }) 

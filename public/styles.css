@@ -47,6 +47,11 @@ nav {
   height: 280px;
 }
 
+#Reload {
+  border-radius: 10;
+
+}
+
 #middlebox {
   float: left;
   background: Green;

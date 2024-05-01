@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const { getImageRaw, getImageMapped } = require('./storage.js');
 const { getWeather } = require('./weather.js')
+const { promptResponse } = require('./model.js')
 
 const Port = process.env.PORT || 8080;
 
@@ -29,6 +30,21 @@ app.get('/images', async (req, res) => {
 app.get('/weather', async (req, res) => {
   const data = await getWeather();
   res.send(data);
+})
+
+app.get('/prompt', async (req, res) => {
+  const image = req.query.image;
+  const promptText = req.query.prompt;
+  const response = await promptResponse(image, promptText);
+  res.send({
+    image: image, 
+    prompt: promptText,
+    response: response.join("")
+  }); 
+})
+
+app.get('*', (req, res) => {
+  res.send("404 Not Found!")
 })
 
 app.listen(Port, () => {
