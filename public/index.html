@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+
     <title>NDVI Project UI</title>
   </head>
   <body>
@@ -14,7 +17,6 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="droneUI.html">Drone UI</a></li>
-        <li><a href="insightsAI.html">AI insights</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
       <div class="burger">
@@ -23,6 +25,37 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <script src="main.js"></script>
+    <div class="w-screen flex flex-row">
+      <div class="w-1/2 p-4 flex flex-col h-full gap-9 items-center">
+        <div class="flex flex-row gap-2 w-full items-center justify-center">
+          <button
+            id="uploadImage"
+            class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
+          >
+            Upload image
+          </button>
+        </div>
+        <div class="h-1/4 w-3/4 flex flex-col items-center justify-center">
+          <img alt="Current Image" id="currImage" class="h-full aspect-auto" />
+        </div>
+        <textarea
+          id="question"
+          class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
+          placeholder="Prompt..."
+        ></textarea>
+        <textarea
+          id="diagnosis"
+          class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
+          placeholder="Response.."
+          disabled
+        ></textarea>
+      </div>
+      <div class="w-1/2 flex flex-col">
+        <div class="h-1/2 border-l-2 border-dashed border-red-500 p-4"></div>
+        <div
+          class="h-1/2 border-l-2 border-t-2 border-dashed border-red-500 p-4"
+        ></div>
+      </div>
+    </div>
   </body>
 </html>
