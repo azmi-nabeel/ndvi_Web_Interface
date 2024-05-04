@@ -23,35 +23,37 @@ const rawImage = document.getElementById('rawImage');
 const mappedImage = document.getElementById('mappedImage');
 const button = document.getElementById('Reload');
 
-button.addEventListener('click' ,function() {
-    let raw;
-    let mapped;
-    fetch('/images').then((response) => {
-        response.json().then((data) => {
-            if(data.error){
-                console.log("dsadas");
-            }else{
-                rawImage.src = data.rawURL;
-                mappedImage.src = data.mappedURL;
-                console.log(data.rawURL)
-                console.log(data.mappedURL)
-            }
-        })
-    });
-});
+// button.addEventListener('click' ,function() {
+//     let raw;
+//     let mapped;
+//     fetch('/images').then((response) => {
+//         response.json().then((data) => {
+//             if(data.error){
+//                 console.log("dsadas");
+//             }else{
+//                 rawImage.src = data.rawURL;
+//                 mappedImage.src = data.mappedURL;
+//                 console.log(data.rawURL)
+//                 console.log(data.mappedURL)
+//             }
+//         })
+//     });
+// });
 
 // Index.html
 const askbtn = document.getElementById("ask");
 
 askbtn.addEventListener('click',()=>{
     const qstxt = document.getElementById("question");
-    const response = document.getElementById("diagnosis");
+    const llmresponse = document.getElementById("diagnosis");
+    //console.log("waiting..");
     fetch(`/prompt?prompt=${qstxt.value}`).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 console.log("Unable to fetch");
             }else{
-                console.log(data);
+                //console.log(data);
+                llmresponse.innerHTML=data.response;
             }
         })
     })
