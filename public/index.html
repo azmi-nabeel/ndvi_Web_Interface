@@ -25,51 +25,98 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <div class="w-screen h-screen flex flex-row">
-      <div class="w-1/2 p-4 flex flex-col h-full gap-9 items-center">
-        <div class="flex flex-row gap-2 w-full items-center justify-center">
-          <button
-            id="uploadImage"
-            class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
-          >
-            Upload image
-          </button>
+    <div
+      style="
+        width: 100%;
+        height: 91.95vh;
+        background-color: black;
+        display: inline-block;
+        overflow: hidden;
+      "
+    >
+      <div class="w-screen h-screen flex flex-row">
+        <div class="w-1/2 p-4 flex flex-col h-full gap-9 items-center">
+          <div class="flex flex-row gap-2 w-full items-center justify-center">
+            <button
+              id="uploadImage"
+              class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
+            >
+              Upload image
+            </button>
+          </div>
+          <div class="h-1/6 w-3/4 flex flex-col items-center justify-center">
+            <img
+              alt="Current Image"
+              id="currImage"
+              class="h-full aspect-auto"
+            />
+          </div>
+          <textarea
+            id="question"
+            class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
+            placeholder="Prompt..."
+          ></textarea>
+          <textarea
+            id="diagnosis"
+            class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
+            placeholder="Response.."
+            disabled
+          ></textarea>
         </div>
-        <div class="h-1/4 w-3/4 flex flex-col items-center justify-center">
-          <img alt="Current Image" id="currImage" class="h-full aspect-auto" />
-        </div>
-        <textarea
-          id="question"
-          class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
-          placeholder="Prompt..."
-        ></textarea>
-        <textarea
-          id="diagnosis"
-          class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
-          placeholder="Response.."
-          disabled
-        ></textarea>
-      </div>
-      <div class="w-1/2 flex flex-col">
-        <div class="h-full border-l-2 border-dashed border-red-500 p-4">
-          <div class="card w-full h-full bg-lime-100">
-            <div class="weather loading">
-              <h2 class="city">Weather in City</h2>
-              <h1 class="temp">51°C</h1>
-              <div class="flex">
-                <img
-                  src="https://openweathermap.org/img/wn/04n.png"
-                  alt=""
-                  class="icon"
-                />
-                <div class="description">Cloudy</div>
+        <div class="w-1/2 flex flex-col">
+          <div class="h-full border-l-2 border-dashed border-red-500 p-4">
+            <div class="caa">
+              <div class="forecast">
+                <div style="width: 70%; float: left">
+                  <div class="city">City,Country</div>
+                  <div class="temp"><h2>17°C</h2></div>
+                  <div class="min-temp">24°C</div>
+                  <div class="max-temp">43°C</div>
+                  <div class="date"><h2>Wednesday, April 22</h2></div>
+                </div>
+                <div style="float: left; width: 30%">
+                  <img
+                    src="https://openweathermap.org/img/wn/04n.png"
+                    alt=""
+                    class="icon"
+                  />
+                  <div class="description">Cloudy</div>
+
+                  <!-- JF -->
+                  <img
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      overflow: hidden;
+                    "
+                    src="Assets/wind_image.png"
+                    alt=""
+                  />
+                  <div class="description">WIND SPEED</div>
+                </div>
+                <div style="width: 25%; height: 5%"></div>
               </div>
-              <div class="humidity">Humidity: 60%</div>
-              <div class="wind">Wind speed: 6.2 km/h</div>
-              <div class="min-temp">Min Temp: 0°C</div>
-              <div class="max-temp">Max Temp: 100°C</div>
-              <div class="precipitation">precipitation: 20%</div>
             </div>
+            <!-- <div class="card w-full h-full bg-lime-100">
+              <div class="weather loading">
+                <h2 class="city">Weather in City</h2>
+                <h1 class="temp">51°C</h1>
+                <div class="flex">
+                  <img
+                    src="https://openweathermap.org/img/wn/04n.png"
+                    alt=""
+                    class="icon"
+                  />
+                  <div class="description">Cloudy</div>
+                </div>
+                <div class="humidity">Humidity: 60%</div>
+                <div class="wind">Wind speed: 6.2 km/h</div>
+                <div class="min-temp">Min Temp: 0°C</div>
+                <div class="max-temp">Max Temp: 100°C</div>
+                <div class="precipitation">precipitation: 20%</div>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>

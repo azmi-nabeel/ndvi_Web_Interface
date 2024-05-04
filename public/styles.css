@@ -2,15 +2,17 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* height: 8%; */
   min-height: 8vh;
   background-color: darkolivegreen;
+  width: 100%;
 }
 #full {
   width: 40%;
@@ -49,7 +51,6 @@ nav {
 
 #Reload {
   border-radius: 10;
-
 }
 
 #middlebox {
@@ -200,4 +201,34 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+}
+.forecast {
+  width: 422px;
+  background-color: #34495e;
+  padding: 15px;
+  border-radius: 5px;
+
+  height: 28vh;
+}
+
+.forecast .city {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 7px;
+  font-weight: bold;
+  /* text-align; */
+}
+.forecast .temp {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 7px;
+  font-weight: bold;
+
+  /* text-align; */
+}
+
+.caa {
+  margin-top: 30%;
+  margin-left: 20%;
+  color: rgba(255, 255, 255, 0.9);
 }
