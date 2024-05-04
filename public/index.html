@@ -36,14 +36,6 @@
     >
       <div class="w-screen h-screen flex flex-row">
         <div class="w-1/2 p-4 flex flex-col h-full gap-9 items-center">
-          <div class="flex flex-row gap-2 w-full items-center justify-center">
-            <button
-              id="uploadImage"
-              class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
-            >
-              Upload image
-            </button>
-          </div>
           <div class="h-1/6 w-3/4 flex flex-col items-center justify-center">
             <img
               alt="Current Image"
@@ -55,13 +47,29 @@
             id="question"
             class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
             placeholder="Prompt..."
-          ></textarea>
+          >
+hi</textarea
+          >
           <textarea
             id="diagnosis"
             class="h-1/4 w-3/4 border-2 border-black p-4 bg-white text-black"
             placeholder="Response.."
-            disabled
+            readonly
           ></textarea>
+          <div class="flex flex-row gap-2 w-full items-center justify-center">
+            <button
+              id="uploadImage"
+              class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
+            >
+              Upload image
+            </button>
+            <button
+              id="ask"
+              class="rounded-md bg-lime-700 text-white p-2 border-2 border-black hover:bg-slate-600"
+            >
+              Ask
+            </button>
+          </div>
         </div>
         <div class="w-1/2 flex flex-col">
           <div class="h-full border-l-2 border-dashed border-red-500 p-4">

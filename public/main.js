@@ -23,7 +23,7 @@ const rawImage = document.getElementById('rawImage');
 const mappedImage = document.getElementById('mappedImage');
 const button = document.getElementById('Reload');
 
-button.onclick = function() {
+button.addEventListener('click' ,function() {
     let raw;
     let mapped;
     fetch('/images').then((response) => {
@@ -38,4 +38,21 @@ button.onclick = function() {
             }
         })
     });
-}
+});
+
+// Index.html
+const askbtn = document.getElementById("ask");
+
+askbtn.addEventListener('click',()=>{
+    const qstxt = document.getElementById("question");
+    const response = document.getElementById("diagnosis");
+    fetch(`/prompt?prompt=${qstxt.value}`).then((response) => {
+        response.json().then((data) => {
+            if(data.error){
+                console.log("Unable to fetch");
+            }else{
+                console.log(data);
+            }
+        })
+    })
+});
