@@ -25,7 +25,7 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <div class="w-screen flex flex-row">
+    <div class="w-screen h-screen flex flex-row">
       <div class="w-1/2 p-4 flex flex-col h-full gap-9 items-center">
         <div class="flex flex-row gap-2 w-full items-center justify-center">
           <button
@@ -51,10 +51,27 @@
         ></textarea>
       </div>
       <div class="w-1/2 flex flex-col">
-        <div class="h-1/2 border-l-2 border-dashed border-red-500 p-4"></div>
-        <div
-          class="h-1/2 border-l-2 border-t-2 border-dashed border-red-500 p-4"
-        ></div>
+        <div class="h-full border-l-2 border-dashed border-red-500 p-4">
+          <div class="card w-full h-full bg-lime-100">
+            <div class="weather loading">
+              <h2 class="city">Weather in City</h2>
+              <h1 class="temp">51°C</h1>
+              <div class="flex">
+                <img
+                  src="https://openweathermap.org/img/wn/04n.png"
+                  alt=""
+                  class="icon"
+                />
+                <div class="description">Cloudy</div>
+              </div>
+              <div class="humidity">Humidity: 60%</div>
+              <div class="wind">Wind speed: 6.2 km/h</div>
+              <div class="min-temp">Min Temp: 0°C</div>
+              <div class="max-temp">Max Temp: 100°C</div>
+              <div class="precipitation">precipitation: 20%</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
