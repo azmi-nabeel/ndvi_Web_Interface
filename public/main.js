@@ -58,3 +58,21 @@ askbtn.addEventListener('click',()=>{
         })
     })
 });
+
+rh=document.getElementById("humidityv");
+rhv=parseInt(rh.innerHTML);
+console.log(rhv);
+
+temp=document.getElementById("tempv");
+tempv=parseInt(temp.innerHTML);
+console.log(tempv);
+
+AridityIndex = 1/(1+(rhv/100)*(1.818*(tempv+15)));
+console.log(AridityIndex);
+
+rainfall = (250 - AridityIndex)/10;
+console.log(rainfall);
+
+const llmresponse = document.getElementById("diagnosis");
+llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm";
+
