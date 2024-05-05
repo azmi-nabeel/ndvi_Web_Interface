@@ -61,18 +61,19 @@ askbtn.addEventListener('click',()=>{
 
 rh=document.getElementById("humidityv");
 rhv=parseInt(rh.innerHTML);
-console.log(rhv);
+//console.log(rhv);
 
 temp=document.getElementById("tempv");
 tempv=parseInt(temp.innerHTML);
-console.log(tempv);
+//console.log(tempv);
 
 AridityIndex = 1/(1+(rhv/100)*(1.818*(tempv+15)));
-console.log(AridityIndex);
+//console.log(AridityIndex);
 
 rainfall = (250 - AridityIndex)/10;
-console.log(rainfall);
+//console.log(rainfall);
 
 const llmresponse = document.getElementById("diagnosis");
-llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm";
+if(rainfall>2.5)llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm\nNo irrigation required as sufficient rain is expected";
+else llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm\nIrrigation required as not enough rain is expected";
 
