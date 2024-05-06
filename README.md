@@ -1,14 +1,12 @@
 # ndvi_Web_Interface
 
-ToDo:
+## Web interface for Embedded Project to analyse plant health using drone footage.
 
-Major:
+### Group members
 
-1. Create Home Page with project description and images.
-2. Create UI + Integrate LLM for AI insights.
-3. Integrate Firestore to reload images.
-
-Minor:
-
-1. Choose Color Palette, Project name and other page namings.
-2. Improve Drone Interface UI(Improve Button, Add padding and resize images).
+<ul>
+<li>Aman Kumar Prajapati(22BEC006)</li>
+<li>Azmi Nabeel(22BEC009)</li>
+<li>Harshit Gupta(22BEC018)</li>
+<li>Pratush Rai(22BEC035)</li>
+</ul>
