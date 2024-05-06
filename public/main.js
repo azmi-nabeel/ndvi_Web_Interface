@@ -23,44 +23,49 @@ const rawImage = document.getElementById('rawImage');
 const mappedImage = document.getElementById('mappedImage');
 const button = document.getElementById('Reload');
 
-// button.addEventListener('click' ,function() {
-//     let raw;
-//     let mapped;
-//     fetch('/images').then((response) => {
-//         response.json().then((data) => {
-//             if(data.error){
-//                 console.log("dsadas");
-//             }else{
-//                 rawImage.src = data.rawURL;
-//                 mappedImage.src = data.mappedURL;
-//                 console.log(data.rawURL)
-//                 console.log(data.mappedURL)
-//             }
-//         })
-//     });
-// });
+if(button){
+    button.addEventListener('click' ,()=> {
+    let raw;
+    let mapped;
+    fetch('/images').then((response) => {
+        response.json().then((data) => {
+            if(data.error){
+                console.log("dsadas");
+            }else{
+                rawImage.src = data.rawURL;
+                mappedImage.src = data.mappedURL;
+                console.log(data.rawURL)
+                console.log(data.mappedURL)
+            }
+        })
+    });
+});
+}
 
 // Index.html
 const askbtn = document.getElementById("ask");
 
-askbtn.addEventListener('click',()=>{
-    const qstxt = document.getElementById("question");
-    const llmresponse = document.getElementById("diagnosis");
-    //console.log("waiting..");
-    fetch(`/prompt?prompt=${qstxt.value}`).then((response) => {
-        response.json().then((data) => {
-            if(data.error){
-                console.log("Unable to fetch");
-            }else{
-                //console.log(data);
-                llmresponse.innerHTML=data.response;
-            }
+if(askbtn){
+    askbtn.addEventListener('click',()=>{
+        const qstxt = document.getElementById("question");
+        const llmresponse = document.getElementById("diagnosis");
+        //console.log("waiting..");
+        fetch(`/prompt?prompt=${qstxt.value}`).then((response) => {
+            response.json().then((data) => {
+                if(data.error){
+                    console.log("Unable to fetch");
+                }else{
+                    //console.log(data);
+                    llmresponse.innerHTML=data.response;
+                }
+            })
         })
-    })
-});
+    });
+}
 
 rh=document.getElementById("humidityv");
-rhv=parseInt(rh.innerHTML);
+if(rh){
+    rhv=parseInt(rh.innerHTML);
 //console.log(rhv);
 
 temp=document.getElementById("tempv");
@@ -76,4 +81,5 @@ rainfall = (250 - AridityIndex)/10;
 const llmresponse = document.getElementById("diagnosis");
 if(rainfall>2.5)llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm\nNo irrigation required as sufficient rain is expected";
 else llmresponse.innerHTML="Expected Rainfall: "+rainfall+"mm\nIrrigation required as not enough rain is expected";
+}
 
